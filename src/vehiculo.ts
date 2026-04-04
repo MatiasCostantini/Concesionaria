@@ -6,6 +6,7 @@ export abstract class Vehiculo {
     private kilometraje: number;
     private precio: number;
     private motor: Motor;
+    abstract descripcion(): string;
 
     constructor(marca: string, anio: number, kilometraje: number, precio: number, motor: Motor) {
         this.marca = marca;
@@ -43,5 +44,12 @@ export abstract class Vehiculo {
             throw new Error("El kilometraje no puede decrecer");
         }
         this.kilometraje = nuevoKilometraje;
+    }
+
+    aplicarDescuento(porcentaje: number): void {
+        if (porcentaje <= 0 || porcentaje > 30) {
+            throw new Error("El descuento debe ser entre 1 y 30%");
+        }
+        this.precio = this.precio - (this.precio * porcentaje / 100);
     }
 }
