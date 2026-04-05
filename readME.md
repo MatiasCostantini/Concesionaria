@@ -2,6 +2,7 @@
 Proyecto de práctica de TypeScript para aplicar conceptos de programación orientada a objetos como herencia, composición, encapsulamiento y agregación.
 
 ## Estructura
+```
 src/
 ├── motor.ts
 ├── vehiculo.ts
@@ -13,13 +14,15 @@ src/
 ├── pagoContado.ts
 ├── pagoFinanciado.ts
 ├── planDeCuotas.ts
-└── venta.ts
+├── venta.ts
+└── index.ts
 
 test/
 ├── vehiculo.test.ts
 ├── vendedor.test.ts
 ├── concesionaria.test.ts
 └── pago.test.ts
+```
 
 ## Conceptos aplicados
 
