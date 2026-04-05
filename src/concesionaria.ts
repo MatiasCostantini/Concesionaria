@@ -27,7 +27,7 @@ export class Concesionaria {
     darDeBajaVendedor(vendedor: Vendedor): void {
         const index = this.vendedores.indexOf(vendedor);
         if (index === -1) {
-            throw new Error("El vendedor no esta registrado");
+            throw new Error("El vendedor no está registrado");
         }
         this.vendedores.splice(index, 1);
     }
@@ -56,11 +56,11 @@ export class Concesionaria {
     registrarVenta(vehiculo: Vehiculo, vendedor: Vendedor, pago: Pago): void {
         const estaEnStock = this.vehiculos.indexOf(vehiculo) !== -1;
         if (!estaEnStock) {
-            throw new Error("El vehiculo no esta en el stock");
+            throw new Error("El vehículo no está en el stock");
         }
         const estaRegistrado = this.vendedores.indexOf(vendedor) !== -1;
         if (!estaRegistrado) {
-            throw new Error("El vendedor no esta registrado");
+            throw new Error("El vendedor no está registrado");
         }
 
         const venta = new Venta(vehiculo, vendedor, pago);

@@ -11,7 +11,7 @@ describe("Concesionaria", () => {
         const concesionaria = new Concesionaria();
         const auto1 = new Autonafta("Toyota", 2020, 50000, 15000, "manual");
         const auto2 = new Autonafta("Audi", 2019, 80000, 12000, "automatica");
-        const auto3 = new Autonafta("Ford", 2021, 30000, 18000, "manual");
+        const auto3 = new Autonafta("Toyota", 2021, 30000, 18000, "manual");
 
         concesionaria.agregarVehiculo(auto1);
         concesionaria.agregarVehiculo(auto2);
