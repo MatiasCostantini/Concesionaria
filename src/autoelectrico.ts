@@ -19,7 +19,7 @@ export class Autoelectrico extends Vehiculo {
 
     override aplicarDescuento(porcentaje: number): void {
         if (porcentaje <= 0 || porcentaje > 15) {
-            throw new Error("El descuento en eléctricos no puede superar el 15%");
+            throw new Error("El descuento en electricos no puede superar el 15%");
         }
         super.aplicarDescuento(porcentaje);
     }

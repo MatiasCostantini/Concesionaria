@@ -24,7 +24,7 @@ export class Vendedor {
 
     asignarVehiculo(vehiculo: Vehiculo): void {
         if (this.vehiculos.length >= 5) {
-            throw new Error("El vendedor no puede tener más de 5 vehículos asignados");
+            throw new Error("El vendedor no puede tener mas de 5 vehículos asignados");
         }
         this.vehiculos.push(vehiculo);
     }
@@ -32,7 +32,7 @@ export class Vendedor {
     desasignarVehiculo(vehiculo: Vehiculo): void {
         const index = this.vehiculos.indexOf(vehiculo);
         if (index === -1) {
-            throw new Error("El vehículo no está asignado a este vendedor");
+            throw new Error("El vehículo no esta asignado a este vendedor");
         }
         this.vehiculos.splice(index, 1);
     }

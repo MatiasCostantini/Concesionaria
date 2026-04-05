@@ -12,7 +12,7 @@ export class Concesionaria {
     eliminarVehiculo(vehiculo: Vehiculo): void {
         const index = this.vehiculos.indexOf(vehiculo);
         if (index === -1) {
-            throw new Error("El vehículo no está en el stock");
+            throw new Error("El vehiculo no está en el stock");
         }
         this.vehiculos.splice(index, 1);
     }
@@ -24,7 +24,7 @@ export class Concesionaria {
     darDeBajaVendedor(vendedor: Vendedor): void {
         const index = this.vendedores.indexOf(vendedor);
         if (index === -1) {
-            throw new Error("El vendedor no está registrado");
+            throw new Error("El vendedor no esta registrado");
         }
         this.vendedores.splice(index, 1);
     }
@@ -32,7 +32,7 @@ export class Concesionaria {
     asignarVehiculoAVendedor(vehiculo: Vehiculo, vendedor: Vendedor): void {
         const estaEnStock = this.vehiculos.indexOf(vehiculo) !== -1;
         if (!estaEnStock) {
-            throw new Error("El vehículo no está en el stock");
+            throw new Error("El vehiculo no está en el stock");
         }
         vendedor.asignarVehiculo(vehiculo);
     }
