@@ -39,7 +39,7 @@ describe("Concesionaria", () => {
 
         expect(() =>
             concesionaria.asignarVehiculoAVendedor(auto, vendedor)
-        ).toThrow("El vehiculo no esta en el stock");
+        ).toThrow("El vehiculo no está en el stock");
     });
 
     it("eliminar un vehiculo no afecta al vendedor", () => {
