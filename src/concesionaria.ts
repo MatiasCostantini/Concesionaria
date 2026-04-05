@@ -1,9 +1,12 @@
 import { Vehiculo } from "./vehiculo";
 import { Vendedor } from "./vendedor";
+import { Venta } from "./venta";
+import { Pago } from "./pago";
 
 export class Concesionaria {
     private vehiculos: Vehiculo[] = [];
     private vendedores: Vendedor[] = [];
+    private ventas: Venta[] = [];
 
     agregarVehiculo(vehiculo: Vehiculo): void {
         this.vehiculos.push(vehiculo);
@@ -48,5 +51,24 @@ export class Concesionaria {
         return this.vehiculos.reduce((masCaro, actual) =>
             actual.getPrecio() > masCaro.getPrecio() ? actual : masCaro
         );
+    }
+
+    registrarVenta(vehiculo: Vehiculo, vendedor: Vendedor, pago: Pago): void {
+        const estaEnStock = this.vehiculos.indexOf(vehiculo) !== -1;
+        if (!estaEnStock) {
+            throw new Error("El vehiculo no esta en el stock");
+        }
+        const estaRegistrado = this.vendedores.indexOf(vendedor) !== -1;
+        if (!estaRegistrado) {
+            throw new Error("El vendedor no esta registrado");
+        }
+
+        const venta = new Venta(vehiculo, vendedor, pago);
+        this.ventas.push(venta);
+        this.eliminarVehiculo(vehiculo);
+    }
+
+    obtenerVentas(): Venta[] {
+        return [...this.ventas];
     }
 }

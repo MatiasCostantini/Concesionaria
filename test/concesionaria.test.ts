@@ -3,6 +3,7 @@ import { Autonafta } from "../src/autonafta";
 import { Autoelectrico } from "../src/autoelectrico";
 import { Vendedor } from "../src/vendedor";
 import { Concesionaria } from "../src/concesionaria";
+import { PagoContado } from "../src/pagocontado";
 
 describe("Concesionaria", () => {
 
@@ -52,6 +53,45 @@ describe("Concesionaria", () => {
         concesionaria.eliminarVehiculo(auto);
 
         expect(vendedor.cantidadVehiculos()).toBe(1);
+    });
+
+    it("registrar una venta saca el vehículo del stock", () => {
+        const concesionaria = new Concesionaria();
+        const vendedor = new Vendedor("Juan", 1);
+        const auto = new Autonafta("Toyota", 2020, 50000, 15000, "manual");
+        const pago = new PagoContado(15000);
+
+        concesionaria.agregarVehiculo(auto);
+        concesionaria.registrarVendedor(vendedor);
+        concesionaria.registrarVenta(auto, vendedor, pago);
+
+        expect(concesionaria.buscarPorMarca("Toyota").length).toBe(0);
+    });
+
+    it("registrar una venta queda guardada", () => {
+        const concesionaria = new Concesionaria();
+        const vendedor = new Vendedor("Juan", 1);
+        const auto = new Autonafta("Toyota", 2020, 50000, 15000, "manual");
+        const pago = new PagoContado(15000);
+
+        concesionaria.agregarVehiculo(auto);
+        concesionaria.registrarVendedor(vendedor);
+        concesionaria.registrarVenta(auto, vendedor, pago);
+
+        expect(concesionaria.obtenerVentas().length).toBe(1);
+    });
+
+    it("no puede registrar una venta con vendedor no registrado", () => {
+        const concesionaria = new Concesionaria();
+        const vendedor = new Vendedor("Juan", 1);
+        const auto = new Autonafta("Toyota", 2020, 50000, 15000, "manual");
+        const pago = new PagoContado(15000);
+
+        concesionaria.agregarVehiculo(auto);
+
+        expect(() =>
+            concesionaria.registrarVenta(auto, vendedor, pago)
+        ).toThrow("El vendedor no está registrado");
     });
 
 });
