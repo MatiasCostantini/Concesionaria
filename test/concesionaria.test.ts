@@ -57,7 +57,7 @@ describe("Concesionaria", () => {
 
     it("registrar una venta saca el vehículo del stock", () => {
         const concesionaria = new Concesionaria();
-        const vendedor = new Vendedor("Juan", 1);
+        const vendedor = new Vendedor("Matias", 1);
         const auto = new Autonafta("Toyota", 2020, 50000, 15000, "manual");
         const pago = new PagoContado(15000);
 
@@ -70,7 +70,7 @@ describe("Concesionaria", () => {
 
     it("registrar una venta queda guardada", () => {
         const concesionaria = new Concesionaria();
-        const vendedor = new Vendedor("Juan", 1);
+        const vendedor = new Vendedor("Matias", 1);
         const auto = new Autonafta("Toyota", 2020, 50000, 15000, "manual");
         const pago = new PagoContado(15000);
 
@@ -83,7 +83,7 @@ describe("Concesionaria", () => {
 
     it("no puede registrar una venta con vendedor no registrado", () => {
         const concesionaria = new Concesionaria();
-        const vendedor = new Vendedor("Juan", 1);
+        const vendedor = new Vendedor("Matias", 1);
         const auto = new Autonafta("Toyota", 2020, 50000, 15000, "manual");
         const pago = new PagoContado(15000);
 

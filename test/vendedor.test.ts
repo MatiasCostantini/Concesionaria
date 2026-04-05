@@ -5,9 +5,9 @@ import { Vendedor } from "../src/vendedor";
 describe("Vendedor", () => {
 
     it("se crea correctamente", () => {
-        const vendedor = new Vendedor("Juan", 1);
+        const vendedor = new Vendedor("Matias", 1);
 
-        expect(vendedor.getNombre()).toBe("Juan");
+        expect(vendedor.getNombre()).toBe("Matias");
         expect(vendedor.getId()).toBe(1);
         expect(vendedor.cantidadVehiculos()).toBe(0);
     });
