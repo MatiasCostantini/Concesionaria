@@ -14,8 +14,7 @@ src/
 ├── pagoContado.ts
 ├── pagoFinanciado.ts
 ├── planDeCuotas.ts
-├── venta.ts
-└── index.ts
+└──venta.ts
 
 test/
 ├── vehiculo.test.ts

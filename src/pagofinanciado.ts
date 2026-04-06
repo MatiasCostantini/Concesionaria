@@ -2,7 +2,7 @@ import { Pago } from "./pago";
 import { plandecuotas } from "./plandecuotas";
 
 export class PagoFinanciado extends Pago {
-    private plan: plandecuotas; // 👈 Composición
+    private plan: plandecuotas;
 
     constructor(monto: number, plan: plandecuotas) {
         super(monto);
